@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/converter.js"></script>
+    <script src="scripts/comments.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="projekt.css">
+    <title>StudBoard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<header id="top">
+    <section>
+        <picture>
+            <source media="(min-width:1920px)" srcset="media/header1920x200.png">
+            <source media="(min-width:1280px)" srcset="media/header1280x133.png">
+            <source media="(min-width:640px)" srcset="media/header640x67.png">
+            <img src="media/header320x34.png">
+        </picture>
+    </section>
+    <div id="login" style="display: block;">
+
+            Name <input type="text" name="username"/><br>
+            Passwort <input type="password" name="password"><br>
+
+            <input type="submit" onclick="login()" value="Login"/>
+
+        <a class="reg" href="registrieren.html">Neu Registrieren</a>
+    </div>
+    <!--children 2 -->
+    <div id="logout" style="display: none;">
+
+            <input type="hidden" value="logout"/>
+            <input type="submit" onclick="logout()" value="Logout"/>
+
+    </div>
+</header>
+<div id="main-div">
+    <div id="second-div">
+        <!-- DONE Menüleiste          -->
+        <div id="menu-div">
+
+            <a href="index.html"><i class="glyphicon glyphicon-home" style="padding: 20px"></i></a>
+            <a id="projectuebersicht" href="projektuebersicht.html" style="padding: 20px">Projektübersicht</a>
+            <a id="newArticle_menu" href="neueArtikel.html" style="padding: 20px">Neues Projekt</a>
+
+        </div>
+
+
+
+        <nav>
+            <ol id="content">
+            </ol>
+        </nav>
+
+        <section id="beschreibung">
+            <article>
+                <div class="kopf">
+                    <div class="picture">
+                        <img src="media/Projektlogo.png" alt="Hier sollte das Projektlogo stehen">
+                    </div>
+                    <div class="head">
+                        <header>
+                            <h3 id="titel"></h3>
+                            <div id="leiter"></div>
+                        </header>
+                    </div>
+                </div>
+                <div style="width: 90%" id="kurzbeschreibung">
+
+                </div>
+                <div style="width: 90%" id="langbeschreibung">
+
+                </div>
+                <div style="width: 90%" id="projektziele">
+                    <p>Projektziele</p>
+                    <ul id="zielliste">
+                    </ul>
+                </div>
+                <div id="edit" style="display: none;">
+                    <button onclick="editButton()" style="color: black">Editieren</button>
+                </div>
+                <footer id="avg_rating">
+
+                </footer>
+            </article>
+        </section>
+<section id="kommentare">
+        Kommentar zum Projekt <br><textarea id="comment" type="text" name="Kommentar" value=""></textarea><br>
+        <br>Note fürs Projekt
+        <select name="note" id="note" size="1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br><button id="senden" onclick="saveComment()" value="Speichern" style="color: black">Speichern</button>
+
+    <div id="comment_section"></div>
+</section>
+
+
+
+
+
+    </div>
+    <!--DONE Button zum laufen bringen-->
+<section>
+        <footer>
+            <a href="copyright.html">Copyright</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutzerklärung</a>
+            <a href="haftung.html">Haftungsausschluss</a>
+
+        </footer>
+        <div id="top_link">
+            <a href="#top">Anfang der Seite</a>
+        </div>
+</section>
+</div>
+
+</body>
+</html>

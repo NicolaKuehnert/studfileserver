@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/converter.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>StudBoard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<header id="top">
+    <section>
+        <!-- DONE Hier müssten wir die Größe des Fensters berücksichtigen         -->
+        <picture>
+            <source media="(min-width:1920px)" srcset="media/header1920x200.png">
+            <source media="(min-width:1280px)" srcset="media/header1280x133.png">
+            <source media="(min-width:640px)" srcset="media/header640x67.png">
+            <img src="media/header320x34.png">
+        </picture>
+    </section>
+
+
+</header>
+<div id="main-div">
+    <div id="second-div">
+        <!-- DONE Menüleiste          -->
+        <div id="menu-div">
+
+            <a href="index.html"><i class="glyphicon glyphicon-home" style="padding: 20px"></i></a>
+            <a id="projectuebersicht" href="projektuebersicht.html" style="padding: 20px">Projektübersicht</a>
+            <a id="newArticle_menu" href="neueArtikel.html" style="padding: 20px">Neues Projekt</a>
+
+        </div>
+
+        <!--DONE Anmeldeformular -->
+        <div id="login">
+            <form action="http://localhost:63342/studboard/leereseite.html" method="POST" enctype="application/x-www-form-urlencoded">
+                Name <input type="text" name="username"/><br>
+                Passwort <input type="password" name="password"><br>
+
+                <input type="submit" value="Submit"/>
+            </form>
+
+
+            <br><a href="registrieren.html">Neu Registrieren</a>
+        </div>
+
+        Auf Grund zu hoher Kosten sind wir aktuell leider nicht erreichbar!
+
+
+    </div>
+    <!--DONE Button zum laufen bringen-->
+    <section>
+        <footer>
+            <a href="copyright.html">Copyright</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutzerklärung</a>
+            <a href="haftung.html">Haftungsausschluss</a>
+
+        </footer>
+        <div id="top_link">
+            <a href="#top">Anfang der Seite</a>
+        </div>
+
+    </section>
+</div>
+
+</body>
+</html>

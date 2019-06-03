@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/converter.js"></script>
+    <script src="scripts/newarticle.js"></script>
+    <script src="scripts/login.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="projekt.css">
+    <title>StudBoard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<header id="top">
+    <section>
+        <picture>
+            <source media="(min-width:1920px)" srcset="media/header1920x200.png">
+            <source media="(min-width:1280px)" srcset="media/header1280x133.png">
+            <source media="(min-width:640px)" srcset="media/header640x67.png">
+            <img src="media/header320x34.png">
+        </picture>
+    </section>
+    <div id="login" style="display: block;">
+
+            Name <input type="text" name="username"/><br>
+            Passwort <input type="password" name="password"><br>
+
+            <input type="submit" onclick="login()" value="Login"/>
+
+        <a class="reg" href="registrieren.html">Neu Registrieren</a>
+    </div>
+    <!--children 2 -->
+    <div id="logout" style="display: none;">
+        <form>
+            <input type="hidden" value="logout"/>
+            <input type="submit" onclick="logout()" value="Logout"/>
+        </form>
+    </div>
+
+</header>
+<div id="main-div">
+    <div id="second-div">
+        <div id="menu-div">
+
+            <a href="index.html"><i class="glyphicon glyphicon-home" style="padding: 20px"></i></a>
+            <a id="projectuebersicht" href="projektuebersicht.html" style="padding: 20px">Projektübersicht</a>
+            <a id="newArticle_menu" href="neueArtikel.html" style="padding: 20px">Neues Projekt</a>
+
+        </div>
+
+
+    <section id="input">
+                <article>
+                    <div class="kopf">
+                        <div class="picture">
+                            <input type="file" name="logo" id="logo">
+                        </div>
+                        <div class="head">
+                            <header>
+                                <input type="text" name="titel" id="title" placeholder="Titel">
+                                <div id="leiter-edit">
+                                    <input type="text" name="leiter" id="leader" placeholder="Leiter">
+                                </div>
+                            </header>
+                        </div>
+                    </div>
+                    <div id="kurzbeschreibung">
+                        <textarea name="kurz" id="kurz" placeholder="Kurzbeschreibung"></textarea>
+                    </div>
+                    <div id="langbeschreibung">
+                        <textarea name="lang" id="lang" placeholder="Langbeschreibung"></textarea>
+                    </div>
+                    <div style="width: 90%" id="projektziele">
+                        Ziel:
+                        <select name="ziel" id="ziel">
+                            <option value="schoen">Schön</option>
+                            <option value="lauffaehig">Lauffähig</option>
+                        </select>
+                    </div>
+                    <footer>
+                        Startdatum: <input type="date" id="start" name="start">
+                        Enddatum: <input type="date" id="end" name="end">
+                    </footer>
+                </article>
+            <input type="submit" onclick="save()" VALUE="Submit"/>
+            </section>
+
+    </div>
+
+</div>
+<section>
+    <footer>
+        <a href="copyright.html">Copyright</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="haftung.html">Haftungsausschluss</a>
+
+    </footer>
+    <div id="top_link">
+        <a href="#top">Anfang der Seite</a>
+    </div>
+
+</section>
+</div>
+
+</body>
+</html>
