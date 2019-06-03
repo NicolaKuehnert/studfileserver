@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+    <filter>
+
+        <description>Set cache expiry for static content</description>
+        <filter-name>ExpiresFilter</filter-name>
+
+        <filter-class>ExpiresFilter</filter-class>
+
+        <init-param>
+            <description>Add an Expires Header</description>
+            <param-name>days</param-name>
+            <param-value>30</param-value>
+        </init-param>
+
+    </filter>
+    <filter-mapping>
+
+        <filter-name>ExpiresFilter</filter-name>
+        <url-pattern>*.html</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+
+    </filter-mapping>
+</web-app>
