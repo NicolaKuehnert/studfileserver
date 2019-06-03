@@ -30,7 +30,6 @@ public class ExpiresFilter implements Filter
 //            ((HttpServletResponse) response).setHeader( "WWW-Authenticate", "Basic realm=myRealm");
 //            ((HttpServletResponse) response).setStatus(401);
 
-            ((HttpServletResponse) response).setHeader( "ContentType", request.getAttribute("type").toString() );
 
         }
 

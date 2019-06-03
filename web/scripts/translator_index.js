@@ -64,5 +64,6 @@ window.onload = function() {
         document.getElementById("projekt-liste").innerHTML += (liststart + project_list[(project_list.length-(i+1))].titel + "<br>" + project_list[(project_list.length-(i+1))].kurzbeschreibung +"<br>" + listlink + "Projekt1.html?_id=" + i + listdesc +"Zum Projekt"+listend+ "<br>")
     }
 
+    console.log("Fetch:");
     fetch_all();
 }
