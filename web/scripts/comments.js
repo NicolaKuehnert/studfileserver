@@ -9,6 +9,7 @@ var id = GET_var("_id");
 
 let json = JSON.parse(localStorage.getItem("project"+id));
 let project = new convertJSON(json).toObject();
+console.log(project);
 
 function saveComment() {
     if(is_logged_in==="1"){

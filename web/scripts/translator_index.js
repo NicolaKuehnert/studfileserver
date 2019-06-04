@@ -34,9 +34,8 @@ let listdesc="\">";
 let listend="</a> </div>";
 
 var lang = navigator.language || navigator.userLanguage;
-console.log(lang);
 
-window.onload = function() {
+window.onload = async function () {
     check_login();
     if (lang.includes("de")) {
         document.getElementById("project_overview").innerHTML = german["project_overview"];
@@ -60,18 +59,19 @@ window.onload = function() {
 
     }
 
+    await f();
+
     for (let i = 0; i < 3; i++) {
-        document.getElementById("projekt-liste").innerHTML += (liststart + project_list[(project_list.length-(i+1))].titel + "<br>" + project_list[(project_list.length-(i+1))].kurzbeschreibung +"<br>" + listlink + "Projekt1.html?_id=" + i + listdesc +"Zum Projekt"+listend+ "<br>")
+        document.getElementById("projekt-liste").innerHTML += (liststart + project_list[(project_list.length - (i + 1))].titel + "<br>" + project_list[(project_list.length - (i + 1))].kurzbeschreibung + "<br>" + listlink + "Projekt1.html?_id=" + i + listdesc + "Zum Projekt" + listend + "<br>")
     }
 
-    console.log("Fetch:");
-    if(window.innerWidth >= 1920){
+    if (window.innerWidth >= 1920) {
         fetchImage("media/header1920x200.png");
-    } else if(window.innerWidth >= 1280){
+    } else if (window.innerWidth >= 1280) {
         fetchImage("media/header1280x133.png");
-    } else if(window.innerWidth >= 640){
+    } else if (window.innerWidth >= 640) {
         fetchImage("media/header640x67.png");
-    }else{
+    } else {
         fetchImage("media/header320x34.png");
     }
 
@@ -80,7 +80,6 @@ window.onload = function() {
 };
 
 window.onresize = function () {
-    console.log("Fetch:");
     if(window.innerWidth >= 1920){
         fetchImage("media/header1920x200.png");
     } else if(window.innerWidth >= 1280){

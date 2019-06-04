@@ -37,8 +37,9 @@ end="</a></footer>\n" +
 
 var lang = navigator.language || navigator.userLanguage;
 
-window.onload = function()
+window.onload = async function()
 {
+    await fillArray();
     if (lang.includes("de")){
         document.getElementById("projectuebersicht").innerHTML = german["project_overview"];
         document.getElementById("newArticle_menu").innerHTML = german["new_project"];
@@ -63,7 +64,31 @@ window.onload = function()
         document.getElementById("content").innerHTML += "<li>" + project_list[k].titel + "</li>";
     }
     check_login();
-}
+    if(window.innerWidth >= 1920){
+        fetchImage("media/header1920x200.png");
+    } else if(window.innerWidth >= 1280){
+        fetchImage("media/header1280x133.png");
+    } else if(window.innerWidth >= 640){
+        fetchImage("media/header640x67.png");
+    }else{
+        fetchImage("media/header320x34.png");
+    }
+
+    fetchVideo("media/video.mp4");
+
+};
+
+window.onresize = function () {
+    if(window.innerWidth >= 1920){
+        fetchImage("media/header1920x200.png");
+    } else if(window.innerWidth >= 1280){
+        fetchImage("media/header1280x133.png");
+    } else if(window.innerWidth >= 640){
+        fetchImage("media/header640x67.png");
+    }else{
+        fetchImage("media/header320x34.png");
+    }
+};
 
 function setCount() {
     let node = document.getElementById("count");
