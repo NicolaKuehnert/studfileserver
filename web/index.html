@@ -37,11 +37,13 @@
     <!--children 0 -->
     <section>
         <!-- DONE Hier müssten wir die Größe des Fensters berücksichtigen         -->
-        <picture>
-            <source media="(min-width:1920px)" srcset="media/header1920x200.png">
-            <source media="(min-width:1280px)" srcset="media/header1280x133.png">
-            <source media="(min-width:640px)" srcset="media/header640x67.png">
-            <img src="media/header320x34.png">
+        <picture id="container">
+            <!--
+            <source id="large" media="(min-width:1920px)" srcset="1media/header1920x200.png">
+            <source id="medium" media="(min-width:1280px)" srcset="media/header1280x133.png">
+            <source id="small" media="(min-width:640px)" srcset="media/header640x67.png">
+            <img id="mobile" src="media/header320x34.png">
+            -->
         </picture>
     </section>
     <!--children 1 -->
@@ -90,7 +92,7 @@
                 </div>
 
 
-                <video class="column" controls>
+                <video class="column" id="vid" controls>
                     <source src="media/video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>

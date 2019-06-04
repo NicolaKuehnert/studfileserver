@@ -31,7 +31,7 @@ let english ={
 let liststart= "<div style=\"margin-top: 10px\">";
 let listlink ="<a class=\"reg\" href=\"";
 let listdesc="\">";
-let listend="</a> </div>"
+let listend="</a> </div>";
 
 var lang = navigator.language || navigator.userLanguage;
 console.log(lang);
@@ -65,5 +65,29 @@ window.onload = function() {
     }
 
     console.log("Fetch:");
-    fetch_all();
-}
+    if(window.innerWidth >= 1920){
+        fetchImage("media/header1920x200.png");
+    } else if(window.innerWidth >= 1280){
+        fetchImage("media/header1280x133.png");
+    } else if(window.innerWidth >= 640){
+        fetchImage("media/header640x67.png");
+    }else{
+        fetchImage("media/header320x34.png");
+    }
+
+    fetchVideo("media/video.mp4");
+
+};
+
+window.onresize = function () {
+    console.log("Fetch:");
+    if(window.innerWidth >= 1920){
+        fetchImage("media/header1920x200.png");
+    } else if(window.innerWidth >= 1280){
+        fetchImage("media/header1280x133.png");
+    } else if(window.innerWidth >= 640){
+        fetchImage("media/header640x67.png");
+    }else{
+        fetchImage("media/header320x34.png");
+    }
+};
