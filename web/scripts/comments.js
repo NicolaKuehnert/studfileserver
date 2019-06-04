@@ -36,7 +36,9 @@ window.onload = function () {
         document.getElementById("edit").style.display = "none";
     }
 
-}
+    fetchLogo("media/Projektlogo.png");
+
+};
 
 function loadProject() {
     document.getElementById("titel").innerHTML = project.titel;

@@ -27,6 +27,9 @@ public class ExpiresFilter implements Filter
             //HTTP header date format: Thu, 01 Dec 1994 16:00:00 GMT
             String o = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss zzz").format( c.getTime() );
             ((HttpServletResponse) response).setHeader( "Expires", o );
+
+            String typ = request.getContentType();
+            ((HttpServletResponse) response).setHeader("ContentType", typ);
 //            ((HttpServletResponse) response).setHeader( "WWW-Authenticate", "Basic realm=myRealm");
 //            ((HttpServletResponse) response).setStatus(401);
 

@@ -18,7 +18,11 @@
     <filter-mapping>
 
         <filter-name>ExpiresFilter</filter-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>*.png</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+
+        <filter-name>ExpiresFilter</filter-name>
+        <url-pattern>*.mp4</url-pattern>
         <dispatcher>REQUEST</dispatcher>
 
     </filter-mapping>

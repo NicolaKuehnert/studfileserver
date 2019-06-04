@@ -2,6 +2,15 @@ function makeBlob(response) {
     return response.blob();
 }
 
+function insertLogo(blob) {
+    var container = document.getElementById("picture");
+    var imgElem = document.createElement("img");
+    container.innerHTML = "";
+    container.appendChild(imgElem);
+    var imgUrl = URL.createObjectURL(blob);
+    imgElem.src = imgUrl;
+}
+
 function insertVideo(blob) {
     var container = document.getElementById("vd");
     var srcElem = document.createElement("source");
@@ -22,7 +31,20 @@ function insertImage(blob) {
 }
 
 function fetchImage(pathToResource){
-    fetch(pathToResource)
+    var mheaders = new Headers({
+        'Content-Type': 'image/png'
+    });
+
+    var init = {
+        method: 'GET',
+        headers: mheaders,
+        mode: 'cors',
+        cache: 'default'
+    };
+
+    var myRequest = new Request(pathToResource, init);
+
+    fetch(myRequest)
         .then(makeBlob)
         .then(insertImage)
         .catch( function (reason) {
@@ -32,6 +54,47 @@ function fetchImage(pathToResource){
 }
 
 function fetchVideo(path) {
-    fetch(path)
+
+    var mheaders = new Headers({
+        'Content-Type': 'video/mp4'
+    });
+
+    var init = {
+        method: 'GET',
+        headers: mheaders,
+        mode: 'cors',
+        cache: 'default'
+    };
+
+    var myRequest = new Request(path, init);
+
+    fetch(myRequest)
         .then(makeBlob)
+        .then(insertVideo)
+        .catch(function (reason) {
+            console.log(reason);
+        });
+}
+
+function fetchLogo(pathToResource){
+    var mheaders = new Headers({
+        'Content-Type': 'image/png'
+    });
+
+    var init = {
+        method: 'GET',
+        headers: mheaders,
+        mode: 'cors',
+        cache: 'default'
+    };
+
+    var myRequest = new Request(pathToResource, init);
+
+    fetch(myRequest)
+        .then(makeBlob)
+        .then(insertLogo)
+        .catch( function (reason) {
+            console.log(reason);
+        })
+    ;
 }
