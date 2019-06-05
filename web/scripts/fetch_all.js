@@ -12,7 +12,7 @@ function insertLogo(blob) {
 }
 
 function insertVideo(blob) {
-    var container = document.getElementById("vd");
+    var container = document.getElementById("vid");
     var srcElem = document.createElement("source");
     container.innerHTML = "";
     container.appendChild(srcElem);
