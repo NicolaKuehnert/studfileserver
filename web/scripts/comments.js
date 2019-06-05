@@ -20,6 +20,8 @@ function saveComment() {
         let comment = new Comments(id,text, note_text, localStorage.getItem("username"));
         let json = new convertJSON(comment).toJSON();
         localStorage.setItem(("comment"+i+id), JSON.stringify(json));
+
+        postData(("data/comment"),json);
         i++;
     } else {
         alert("Du muss angemeldet sein!");
@@ -37,8 +39,29 @@ window.onload = function () {
         document.getElementById("edit").style.display = "none";
     }
 
+    if(window.innerWidth >= 1920){
+        fetchImage("media/header1920x200.png");
+    } else if(window.innerWidth >= 1280){
+        fetchImage("media/header1280x133.png");
+    } else if(window.innerWidth >= 640){
+        fetchImage("media/header640x67.png");
+    }else{
+        fetchImage("media/header320x34.png");
+    }
     fetchLogo("media/Projektlogo.png");
 
+};
+
+window.onresize = function () {
+    if(window.innerWidth >= 1920){
+        fetchImage("media/header1920x200.png");
+    } else if(window.innerWidth >= 1280){
+        fetchImage("media/header1280x133.png");
+    } else if(window.innerWidth >= 640){
+        fetchImage("media/header640x67.png");
+    }else{
+        fetchImage("media/header320x34.png");
+    }
 };
 
 function loadProject() {

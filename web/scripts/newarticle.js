@@ -31,6 +31,7 @@ function save() {
 
     localStorage.setItem(("project"+id), JSON.stringify(json));
     project_list.push(article);
+    postData(("data/project.json"), json);
 
 
     window.location.replace(("Projekt1.html?_id="+id));
